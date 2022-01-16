@@ -1,0 +1,6 @@
+.gambarku {
+    width: 100%;
+    height: 250px !important;
+    object-fit: cover;
+    object-position: 80% 100%;
+}
