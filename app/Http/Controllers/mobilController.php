@@ -49,7 +49,10 @@ class mobilController extends Controller
      */
     public function create()
     {
-        return view("pages.form_tambah_data");
+        $mobil = mobil::groupBy('merekmobil')->select('merekmobil')->get();
+        return view("pages.form_tambah_data",[
+            'merekmobil' => $mobil,
+        ]);
     }
 
     /**
@@ -73,12 +76,14 @@ class mobilController extends Controller
             $acak = strtotime($tgl);
             $namaGambar = $acak.".".$ex;
 
+            // dd($request->inputMerek);
             if($conv=="jpeg" || $conv =="jpg" || $conv == "png"){
                 if($size <= 3000000){
                     $file->move(\base_path()."/public/gambar", $namaGambar);
                     $tambah = new mobil;
                     $tambah->codemobil = $request->inputCode;
                     $tambah->namamobil = $request->inputNama;
+                    $tambah->merekmobil = $request->inputMerek;
                     $tambah->warna = $request->inputWarna;
                     $tambah->tahun = $request->inputTahun;
                     $tambah->hargaperjam = $request->inputHargaperjam;
@@ -127,9 +132,11 @@ class mobilController extends Controller
     public function edit(mobil $mobil, $id)
     {
         $data = $mobil->where("id", $id)->first();
-
+        $mobil = mobil::groupBy('merekmobil')->select('merekmobil')->get();
+       
         return view("pages.form_edit_data",[
-            'mobil' => $data
+            'mobil' => $data,
+            'merekmobil' => $mobil,
         ]);
     }
 
@@ -150,6 +157,7 @@ class mobilController extends Controller
                 'namamobil' => $request->inputNama,
                 'warna' => $request->inputWarna,
                 'tahun' => $request->inputTahun,
+                'merekmobil' => $request->inputMerek,
                 'hargaperjam' => $request->inputHargaperjam,
                 'hargaperhari' => $request->inputHargaperhari,
                 'keterangan' => $ket->keterangan,

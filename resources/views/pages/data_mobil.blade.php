@@ -18,8 +18,9 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Gambar</th>
-                <th scope="col">Code Mobil</th>
+                <th scope="col">No Polisi</th>
                 <th scope="col">Nama Mobil</th>
+                <th scope="col">Merek</th>
                 <th scope="col">warna</th>
                 <th scope="col">Tahun</th>
                 <th scope="col">Per jam</th>
@@ -38,6 +39,7 @@
                     </td>
                     <td>{{ $data->codemobil}}</td>
                     <td>{{ $data->namamobil}}</td>
+                    <td>{{ $data->merekmobil}}</td>
                     <td>{{ $data->warna}}</td>
                     <td>{{ $data->tahun}}</td>
                     <td>{{ $data->hargaperjam}}</td>

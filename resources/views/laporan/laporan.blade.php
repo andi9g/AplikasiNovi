@@ -94,7 +94,7 @@
             <th>#</th>
             <th>NIK</th>
             <th>Nama Penyewa</th>
-            <th>Kd. Mobil</th>
+            <th>No Polisi</th>
             <th>Nama Mobil</th>
             <th>Lama Rental</th>
             <th>Denda</th>

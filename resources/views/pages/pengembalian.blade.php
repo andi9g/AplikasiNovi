@@ -31,7 +31,7 @@
         <thead>
             <tr>
             <th scope="col">Nama Penyewa</th>
-            <th scope="col">Code Mobil</th>
+            <th scope="col">Nomor Polisi</th>
             <th scope="col">Nama Mobil</th>
             <th scope="col">Tanggal Sewa</th>
             <th scope="col">Tanggal Selesai</th>
